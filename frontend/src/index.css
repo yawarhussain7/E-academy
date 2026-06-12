@@ -3,14 +3,27 @@
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   margin: 0;
 }
 
 body {
-  overflow: hidden;
+  overflow-y: auto;
   background: #0d0e12;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+  border-radius: 9999px;
 }
 
 * {

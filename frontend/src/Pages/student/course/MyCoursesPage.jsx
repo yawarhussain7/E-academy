@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Sidebar from '../../../components/students/Slidebar'
-import Header from '../../../components/students/Header';
+import Sidebar from '../../../components/students/common/Slidebar'
+import Header from '../../../components/students/common/Header';
 import CourseFilters from '../../../components/students/course/CourseFilters'
 import CourseGridCard from '../../../components/students/course/CourseGridCard';
 

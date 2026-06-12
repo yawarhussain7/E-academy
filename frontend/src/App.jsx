@@ -8,6 +8,8 @@ import LoadingPage from './Pages/home/LandingPage'
 import AssignmentsPage from './Pages/student/assignment/AssignmentsPage';
 import ResourcesPage from './Pages/student/Resource/ResourcesPage';
 import ProjectGalleryPage from './Pages/student/project/Project';
+import SettingsPage from './Pages/student/setting/SettingsPage';
+import ChatPage from './Pages/student/message/ChatPage';
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
       <Route path="assignments" element={<AssignmentsPage />} />
       <Route path="resources" element={<ResourcesPage />} />
       <Route path="projects" element={<ProjectGalleryPage />} />
+      <Route path="message" element={<ChatPage />} />
+      <Route path="settings" element={<SettingsPage />} />
       </Route>
 
     </Routes>

@@ -85,7 +85,7 @@ export default function UploadedProjectsDashboard({ projects, onUpdateProjectMet
           </div>
 
           {/* Traffic Metric report cards widgets */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="bg-[#0d0e12] border border-gray-800/80 p-4 rounded-xl text-center">
               <Eye className="w-4 h-4 text-blue-400 mx-auto mb-1.5" />
               <span className="block text-[9px] text-gray-500 uppercase font-semibold">Total Views</span>

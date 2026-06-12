@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Sidebar from '../../../components/students/Slidebar'
-import Header from '../../../components/students/Header';
+import Sidebar from '../../../components/students/common/Slidebar'
+import Header from '../../../components/students/common/Header';
 import ResourceFilters from '../../../components/students/resources/ResourceFilters';
 import ResourceCard from '../../../components/students/resources/ResourceCard';
 import UploadResourceModal from '../../../components/students/resources/UploadResourceModal';

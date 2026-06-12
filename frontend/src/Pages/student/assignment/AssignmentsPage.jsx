@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Sidebar from '../../../components/students/Slidebar'
-import Header from '../../../components/students/Header';
+import Sidebar from '../../../components/students/common/Slidebar'
+import Header from '../../../components/students/common/Header';
 import AssignmentCard from '../../../components/students/assignments/AssignmentCard'
 import AssignmentFilters from '../../../components/students/assignments/AssignmentFilters';
 import AIRejectionPanel from '../../../components/students/assignments/AIRejectionPanel'

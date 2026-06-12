@@ -4,7 +4,7 @@ import {
   BookOpen,
   FileText,
   GraduationCap,
-  Award,
+  MessageSquareMore ,
   Settings,
   LogOut,
   FolderGit2
@@ -20,7 +20,7 @@ export default function Sidebar() {
     { icon: FileText, label: 'Assignments', path: '/student/assignments' },
     { icon: FileText, label: 'Resources', path: '/student/resources' },
     { icon: FolderGit2 , label: 'Projects', path: '/student/projects' },
-    { icon: Award, label: 'Certificates', path: '/student/certificates' },
+    { icon: MessageSquareMore , label: 'Messages', path: '/student/message' },
     { icon: Settings, label: 'Settings', path: '/student/settings' },
   ];
 

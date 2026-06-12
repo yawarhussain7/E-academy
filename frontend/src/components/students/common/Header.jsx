@@ -6,6 +6,7 @@ export default function Header({ user }) {
   const [profileOpen, setProfileOpen] = useState(false);
   const notificationRef = useRef(null);
   const profileRef = useRef(null);
+  const avatarUrl = user?.avatarUrl || '';
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -100,11 +101,17 @@ export default function Header({ user }) {
             onClick={() => setProfileOpen(!profileOpen)}
             className="flex min-w-0 items-center gap-3 transition-opacity hover:opacity-80"
           >
-            <img
-              src={user.avatarUrl}
-              alt="Profile"
-              className="h-9 w-9 shrink-0 rounded-full object-cover ring-2 ring-purple-500/20"
-            />
+            {avatarUrl ? (
+              <img
+                src={avatarUrl}
+                alt="Profile"
+                className="h-9 w-9 shrink-0 rounded-full object-cover ring-2 ring-purple-500/20"
+              />
+            ) : (
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-purple-500/10 text-[10px] font-bold uppercase text-purple-200 ring-2 ring-purple-500/20">
+                {user?.name?.[0] || '?'}
+              </div>
+            )}
             <div className="hidden min-w-0 text-left sm:block">
               <p className="truncate text-xs font-semibold tracking-wide text-white">{user.name}</p>
               <p className="truncate text-[10px] text-gray-500">{user.handle}</p>
@@ -115,11 +122,17 @@ export default function Header({ user }) {
             <div className="absolute right-0 top-12 w-64 rounded-lg border border-gray-800 bg-[#13151a] shadow-lg z-50">
               <div className="border-b border-gray-800 p-4">
                 <div className="flex items-center gap-3">
-                  <img
-                    src={user.avatarUrl}
-                    alt="Profile"
-                    className="h-10 w-10 rounded-full object-cover ring-2 ring-purple-500/20"
-                  />
+                  {avatarUrl ? (
+                    <img
+                      src={avatarUrl}
+                      alt="Profile"
+                      className="h-10 w-10 rounded-full object-cover ring-2 ring-purple-500/20"
+                    />
+                  ) : (
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/10 text-xs font-bold uppercase text-purple-200 ring-2 ring-purple-500/20">
+                      {user?.name?.[0] || '?'}
+                    </div>
+                  )}
                   <div>
                     <p className="text-xs font-semibold text-white">{user.name}</p>
                     <p className="text-[10px] text-gray-500">{user.handle}</p>
