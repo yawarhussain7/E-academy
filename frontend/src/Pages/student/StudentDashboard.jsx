@@ -6,7 +6,7 @@ import CourseOverviewChart from '../../components/students/CourseOverviewChart';
 import PerformanceSummary from '../../components/students/PerformanceSummary';
 import CourseProgressList from '../../components/students/CourseProgressList';
 import UpcomingLessons from '../../components/students/UpcomingLessons';
-import Footer from '../../components/common/Footer';
+
 
 export default function StudentDashboard() {
   const userData = {
@@ -48,7 +48,7 @@ export default function StudentDashboard() {
             </div>
           </section>
         </div>
-        <Footer />
+        
       </main>
     </div>
   );

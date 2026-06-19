@@ -171,7 +171,7 @@ export default function StudentChatHub() {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 bg-[#13151a] border border-gray-800/50 rounded-2xl shadow-2xl w-full h-[calc(100vh-140px)] min-h-137.5 overflow-hidden antialiased relative">
+    <div className="grid grid-cols-1 md:grid-cols-12 bg-[#13151a] border border-gray-800/50 rounded-2xl shadow-2xl w-full h-[calc(100vh-140px)] min-h-[137.5px] overflow-hidden antialiased relative">
       
       {/* 📱 LEFT COLUMN PANEL: Contacts Feed & Search Matrix */}
       <div className="md:col-span-4 border-r border-gray-800/40 flex flex-col bg-[#111317]">
@@ -304,7 +304,7 @@ export default function StudentChatHub() {
                           <span className="block truncate">{msg.replyTo}</span>
                         </div>
                       )}
-                      <p className="text-left whitespace-pre-wrap wrap-break-word">{msg.text}</p>
+                      <p className="text-left whitespace-pre-wrap break-words">{msg.text}</p>
                       <div className="flex items-center justify-end gap-1 text-[9px] opacity-60 text-right select-none">
                         <span className="whitespace-nowrap">{msg.time}</span>
                         {msg.sender === 'me' && (

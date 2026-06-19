@@ -33,7 +33,7 @@ export default function CourseProgressList() {
               <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-800">
                 <div className="h-full bg-emerald-500 transition-all duration-500" style={{ width: `${course.progress}%` }}></div>
               </div>
-              <span className="min-w-18 text-right text-xs font-medium text-gray-500">{course.progress}%</span>
+              <span className="min-w-[72px] text-right text-xs font-medium text-gray-500">{course.progress}%</span>
             </div>
 
             <div className="grid grid-cols-3 gap-2 text-[10px] font-medium text-gray-500 lg:w-2/5">
