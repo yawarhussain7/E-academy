@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AuthFormUI from '../../components/auth/AuthFormUI';
+import AuthFormUI from '../../components/auth/AuthFormUI'
 
 export default function AuthPage() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -12,7 +12,6 @@ export default function AuthPage() {
     rememberMe: false
   });
 
-  // Master handler for keeping input text responsive across components
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -21,13 +20,11 @@ export default function AuthPage() {
     }));
   };
 
-  // Switch view tabs safely without tracking overlapping text entries
   const handleViewToggle = (targetSignInState) => {
     setIsSignIn(targetSignInState);
     setFormData({ name: '', email: '', password: '', rememberMe: false });
   };
 
-  // Form handling logic (API integration, Validation, Router Redirects)
   const handleFormSubmission = (e) => {
     e.preventDefault();
     console.log(`Connecting API pipeline for: [${role.toUpperCase()}]`, formData);
