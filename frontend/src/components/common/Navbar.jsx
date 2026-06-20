@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Layers, Menu, X } from 'lucide-react';
+import {Link} from 'react-router-dom'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Navbar() {
       </div>
 
       <div className="hidden md:flex items-center gap-4">
-        <button className="text-sm font-semibold text-gray-400 hover:text-white transition-colors">Sign in</button>
+        <Link to='/auth/signIn' className="text-sm font-semibold text-gray-400 hover:text-white transition-colors">Sign in</Link>
         <button className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm rounded-xl shadow-[0_0_20px_rgba(147,51,234,0.3)] transition-all">
           Start for free
         </button>

@@ -9,7 +9,8 @@ import TeacherRoutes from "./Routes/TeacherRoutes";
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/auth/:type" element={<AuthPage />} />
+     
       <Route path="/" element={<LoadingPage />} />
 
       {StudentRoutes()}

@@ -2,17 +2,18 @@ import { signUp, signIn } from '../../services/auth/user.service.js'
 
 export const signUpUser = async (req,res) => {
     try {
-        const { name, email, password } = req.body
+        const { name, email, password, role } = req.body
         if (name === '' || email === '' || password === '') {
             throw new Error('all fields are required for signIn...')
         }
-        const user = await signUp({ name, email, password })
+        console.log(`Request is : ${name,email,password}`)
+        const user = await signUp({ name, email, password, role })
 
         //** */ store token in cookies
         res.cookie("token",user.token,{
             httpOnly:true,
             secure:false,
-            sameSite:'strict',
+            sameSite:'lax',
             maxAge:60*60*1000
         })
 
@@ -28,24 +29,24 @@ export const signUpUser = async (req,res) => {
             message: 'user created failed',
             success: false
         })
-        throw error
+        console.error(error.message)
     }
 }
 
 export const signInUser = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, role } = req.body;
         if (email === '' || password === '') {
             throw new Error('email & password not be null')
         }
 
-        const user = await signIn({ email, password })
+        const user = await signIn({ email, password, role })
 
          //** */ store token in cookies
         res.cookie('token',user.token, {
             httpOnly:true,
             secure:false,
-            sameSite:'strict',
+            sameSite:'lax',
             maxAge:60*60*1000
         })
 
@@ -61,6 +62,6 @@ export const signInUser = async (req, res) => {
             message: 'Login failed...',
             success: false
         })
-        throw error
+        console.error(error.message)
     }
 }

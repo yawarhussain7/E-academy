@@ -9,6 +9,8 @@ export default function AuthFormUI({
   formData,
   onInputChange,
   onSubmit,
+  isLoading,
+  error,
 }) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -153,12 +155,20 @@ export default function AuthFormUI({
               </div>
             )}
 
+            {/* Error Display */}
+            {error && (
+              <div className="rounded-lg bg-red-500/10 border border-red-500/20 px-3 py-2 text-xs text-red-400 font-medium">
+                {error}
+              </div>
+            )}
+
             {/* Action Trigger Button Panel */}
             <button
               type="submit"
-              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-purple-600 py-3 text-xs font-bold text-white shadow-[0_4px_24px_rgba(147,51,234,0.2)] transition-all duration-300 ease-out hover:bg-purple-500 hover:shadow-[0_4px_30px_rgba(147,51,234,0.35)] active:scale-[0.99]"
+              disabled={isLoading}
+              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-purple-600 py-3 text-xs font-bold text-white shadow-[0_4px_24px_rgba(147,51,234,0.2)] transition-all duration-300 ease-out hover:bg-purple-500 hover:shadow-[0_4px_30px_rgba(147,51,234,0.35)] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span>{isSignIn ? 'Authenticate Portal' : 'Provision Secure Node'}</span>
+              <span>{isLoading ? 'Processing...' : (isSignIn ? 'Authenticate Portal' : 'Provision Secure Node')}</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </button>
           </form>
