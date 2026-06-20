@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cpu, CheckCircle2, AlertCircle, Edit3, MoreVertical } from 'lucide-react';
 
-const GradeRow = ({ studentName, email, avatar, assignment, date, score, status }) => {
+const GradeRow = ({ studentName, email, avatar, assignment, date, score, status, onGrade }) => {
   return (
     <tr className="border-b border-[#1a161d] hover:bg-[#151117] transition-colors group">
       {/* Student Meta Profile Details */}
@@ -53,7 +53,10 @@ const GradeRow = ({ studentName, email, avatar, assignment, date, score, status 
       {/* Contextual Action Items Group */}
       <td className="py-4 px-6 text-right">
         <div className="flex items-center justify-end gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
-          <button className="p-1.5 bg-[#0d0b0e] border border-[#1a161d] hover:border-purple-500/50 text-gray-400 hover:text-white rounded-lg transition-all">
+          <button
+            onClick={onGrade}
+            className="p-1.5 bg-[#0d0b0e] border border-[#1a161d] hover:border-purple-500/50 text-gray-400 hover:text-white rounded-lg transition-all"
+          >
             <Edit3 className="w-3.5 h-3.5" />
           </button>
           <button className="p-1.5 bg-[#0d0b0e] border border-[#1a161d] text-gray-500 hover:text-white rounded-lg">
